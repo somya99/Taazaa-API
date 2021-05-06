@@ -1,1 +1,66 @@
-<p>find works!</p>
+<hr/>
+
+
+<div class="container">
+    <div class ="row">
+        <div class = "col-md-4">
+
+        </div>
+        <div class = "col-md-5 text-left bg-white rounded shadow py-3">
+      <h1><b>Enter the Product Id to Search</b></h1>
+      <form (ngSubmit) ='findProduct()' [formGroup] = 'productForm' novalidate class = "form">
+        <i>Id:</i><input formControlName = 'id' type = "number" class = "form-control" placeholder="Enter Id"/>
+        <div class = "alert alert-danger" *ngIf = "productForm?.get('Id')?.hasError('required') && productForm?.get('Id')?.touched">
+          Id is required
+      </div>
+        <br/>
+        
+        <button type = "submit" [disabled] = "productForm.invalid" class = "btn btn-danger">Search Product</button>
+        <button type = "button" (click) = 'cancel()' class = "btn btn-info">Reset</button>
+    </form>
+      </div>
+      
+  </div>
+</div>
+<br/>
+<br/>
+<div class = "container" *ngIf = "displayProduct">
+    <div class = "row">
+        <table>
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Color</th>
+                <th>ExpiryDate</th>
+                <th>InStock</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{prod.id}}</td>
+                <td>{{prod.title}}</td>
+                <td>{{prod.price}}</td>
+                <td>{{prod.quantity}}</td>
+                <td>{{prod.color}}</td>
+                <td>{{prod.expiryDate}}</td>
+                
+                <td><ng-container *ngIf="prod.inStock; then yes else no">
+                </ng-container>
+                 
+                <ng-template #yes>
+                    <button class ="btn btn-success">Yes</button>
+                    
+                 </ng-template>
+          
+                 <ng-template #no>
+                    
+                    <button class = "btn btn-danger">No</button>
+                  </ng-template></td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>

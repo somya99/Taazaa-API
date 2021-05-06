@@ -1,22 +1,3 @@
-<!-- <div class = "container">
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <a class="navbar-brand" routerLink = "/home">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link active" routerLink = "/add">Add Product <span class="sr-only">(current)</span></a>
-        <a class="nav-item nav-link" routerLink = "/update">Update Product</a>
-        <a class="nav-item nav-link" routerLink = "/delete">Delete Product</a>
-        
-        
-      </div>
-    </div>
-  </nav>
-  <router-outlet></router-outlet>
-</div>
-<mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
 <mat-toolbar style="background-color: rgb(15, 107, 69);" >
   <mat-toolbar-row style="color: white;">
     <button mat-icon-button>
@@ -25,7 +6,7 @@
    
     <span class="menu-spacer"></span>
     <div>
-      <a mat-button [routerLink]="'/home'"> Home </a>
+      <a mat-button [routerLink]="'/product'"> Home </a>
     </div>
   
   </mat-toolbar-row>
@@ -35,7 +16,7 @@
 <mat-sidenav-container autosize  ><mat-sidenav #sidenav mode="side" style="background-color:rgb(15, 107, 69);">
   <mat-nav-list >
  
-     
+    <a mat-list-item [routerLink]="'/find'" style="color: white;"> Search Product </a> 
     <a mat-list-item [routerLink]="'/add'" style="color: white;"> Add Product </a>
     <a mat-list-item [routerLink]="'/update'" style="color: white;"> Update Product </a>
     <a mat-list-item [routerLink]="'/delete'" style="color: white;"> Delete Product </a>

@@ -1,34 +1,12 @@
 <hr/>
 
-
 <div class="container">
     <div class ="row">
         <div class = "col-md-4">
 
         </div>
         <div class = "col-md-5 text-left bg-white rounded shadow py-3">
-      <h1><b>Enter the Product Id to Update</b></h1>
-      <form (ngSubmit) ='findProduct()' [formGroup] = 'productForm' novalidate class = "form">
-        <i>Id:</i><input formControlName = 'id' type = "number" class = "form-control" placeholder="Enter Id"/>
-        <div class = "alert alert-danger" *ngIf = "productForm?.get('Id')?.hasError('required') && productForm?.get('Id')?.touched">
-          Id is required
-      </div>
-        <br/>
-        
-        <button type = "submit" class = "btn btn-danger">Get Product</button>
-        <button type = "button" (click) = 'cancel()' class = "btn btn-info">Reset</button>
-    </form>
-      </div>
-      
-  </div>
-</div>
-
-<div class="container"  *ngIf = "displayTable">
-    <div class ="row">
-        <div class = "col-md-4">
-
-        </div>
-        <div class = "col-md-5 text-left bg-white rounded shadow py-3">
+            <h1><b>Enter the Product Details to Update</b></h1>
       <form (ngSubmit) ='updateProduct()' [formGroup] = 'productForm' novalidate class = "form">
         <i>Title:</i><input formControlName = 'title' type = "string" class = "form-control" placeholder="Enter Title"/>
         <div class = "alert alert-danger" *ngIf = "productForm?.get('Title')?.hasError('required') && productForm?.get('Title')?.touched">

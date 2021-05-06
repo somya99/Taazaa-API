@@ -13,13 +13,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import {​​​​​​​​MatIconModule}​​​​​​​​ from'@angular/material/icon';
-import {​​​​​​​​MatToolbarModule}​​​​​​​​ from'@angular/material/toolbar';
-import {​​​​​​​​MatButtonModule}​​​​​​​​ from'@angular/material/button';
-import {​​​​​​​​MatSidenavModule}​​​​​​​​ from'@angular/material/sidenav';
-import {​​​​​​​​MatListModule}​​​​​​​​ from'@angular/material/list';
+import { ​​​​​​​​MatIconModule }​​​​​​​​ from'@angular/material/icon';
+import {​​​​ ​​​​MatToolbarModule }​​​​​​​​ from'@angular/material/toolbar';
+import {​​​ ​​​​​MatButtonModule }​​​​​​​​ from'@angular/material/button';
+import {​​ ​​​​​​MatSidenavModule }​​​​​​​​ from'@angular/material/sidenav';
+import {​ ​​​​​​​MatListModule }​​​​​​​​ from'@angular/material/list';
 import { FindComponent } from './find/find.component';
-
+import { MaterialComponent } from './material/material.component';
+import { MatTableModule } from '@angular/material/table';
+import { DetailComponent } from './detail/detail.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { FindComponent } from './find/find.component';
     AddComponent,
     UpdateComponent,
     DeleteComponent,
-    FindComponent
+    FindComponent,
+    MaterialComponent,
+    DetailComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,8 @@ import { FindComponent } from './find/find.component';
     MatButtonModule,
     MatListModule,
     MatSidenavModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

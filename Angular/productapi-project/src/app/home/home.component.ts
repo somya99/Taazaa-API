@@ -10,27 +10,34 @@ import { Product } from '../product';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  //products : Product[] = [];
   products$ : Observable<Product[]>;
-  // productsubscription : Subscription;
+  showsubscribe : boolean = false;
+  showasync : boolean = false;
+  showmaterial : boolean = false;
   constructor(private appservice : AppService, private cd : ChangeDetectorRef){
-    // this.productsubscription = new Subscription();
+    
     this.products$ = new Observable<Product[]>();
   }
 
   ngOnInit(){
-    // this.productsubscription = this.appservice.getProducts().subscribe(
-    //   data => {
-    //     this.cd.markForCheck();
-    //   },
-    //   error => {
-    //     console.log(error)
-    //   },
-    //   () => console.log('complete')
-    // )
+    
     this.products$ = this.appservice.getProducts();
   }
-  
+  ShowSubscribe(){
+    this.showsubscribe = true;
+    this.showasync = false;
+    this.showmaterial = false;
+  }
+  ShowAsync(){
+    this.showsubscribe = false;
+    this.showasync = true;
+    this.showmaterial = false;
+  }
+  ShowMaterial(){
+    this.showsubscribe = false;
+    this.showasync = false;
+    this.showmaterial = true;
+  }
   ngOnDestroy(){
     // if(this.productsubscription){
     //   this.productsubscription.unsubscribe();

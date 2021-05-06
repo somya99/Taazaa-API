@@ -64,15 +64,15 @@ export class AddComponent implements OnInit {
     }
 
     
-    this.appservice.addPostProducts(prodToAdd).subscribe(
+    this.appservice.postProducts(prodToAdd).subscribe(
     data=>{​​​​​​​​
     console.log(data);
     }​​​​​​​​);
-
+    alert("Product Added Successfully !");
     // let product : Product = {...this.productForm.value};
     // product.id = 0;
     // this.appservice.addPostProducts(product).subscribe();
-    this.router.navigate(['/home']);
+    this.router.navigate(['/product']);
   };
 
   cancel(){

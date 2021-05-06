@@ -1,6 +1,7 @@
+<hr/>
 <h1 class = "text-center"><b>Make the API call to fetch products</b></h1>
 <hr/>
-<div class = "container">
+<!-- <div class = "container">
     <div class ="row">
         <div class = "col-md-6">
             <h2><b>API call using Subscribe</b></h2>
@@ -10,9 +11,65 @@
             <h2><b>API call using Async</b></h2>
             <app-async [products] = "products$"></app-async>
         </div>
+        <div class = "col-md-3">
+            <h2><b>API call using Material</b></h2>
+            <app-material [products] = "products$"></app-material>
+        </div>
     </div>
 </div>
 
 
-<hr/>
+<hr/> -->
+<div class ="container">
+<div class="row">
+    <div class = "col-md-12">
+    <ul class="nav nav-tabs">
+        <div class = "col-md-4">
+        <li class="nav-item">
+            <button class="nav-link" (click)='ShowSubscribe()' >Subscribe Table</button>
+            
+        </li>
+    </div>
+        <div class = "col-md-4">
+        <li class="nav-item">
+            <button class="nav-link" (click)='ShowAsync()' >Async Table</button>
+           
+        </li>
+    </div>
+        <div class = "col-md-4">
+        <li class="nav-item">
+            <button class="nav-link" (click)='ShowMaterial()' >Material Table</button>
+        </li>
+    </div>
+    </ul>
+</div>
+<br>
+    
+</div>
+</div>
+<br/>
+<div class="row" *ngIf = "showsubscribe">
+    <div class = "col-md-2"></div>
+    <div class= "col-md-8">
+    <h2><b>API call using Subscribe</b></h2>
+    <app-subscribe [products]='products$'></app-subscribe>
+</div>
+<div class = "col-md-2"></div>
+</div>
+<div class="row" *ngIf = "showasync">
+    <div class = "col-md-2"></div>
+    <div class= "col-md-8">
+    <h2><b>API call using Async</b></h2>
+    <app-async [products]='products$'></app-async>
+    <div class = "col-md-2"></div>
+</div>
+</div>
+<div class="row" *ngIf = "showmaterial">
+    <div class = "col-md-2"></div>
+    <div class= "col-md-8">
+    <h2><b>API call using Material Table</b></h2>
+    <app-material [products]='products$'></app-material>
+    <div class = "col-md-2"></div>
+</div>
+</div>
 

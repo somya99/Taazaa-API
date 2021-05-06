@@ -6,12 +6,18 @@ import { AsyncComponent } from './async/async.component';
 import { AddComponent } from './add/add.component';
 import { UpdateComponent } from './update/update.component';
 import { DeleteComponent } from './delete/delete.component';
+import { FindComponent } from './find/find.component';
+import { DetailComponent } from './detail/detail.component';
+import { EditComponent } from './edit/edit.component';
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'product', component: HomeComponent},
+  {path: 'find', component: FindComponent},
   {path: 'add', component: AddComponent},
   {path: 'update', component: UpdateComponent},
   {path: 'delete', component: DeleteComponent},
-  {path: '', redirectTo:'home', pathMatch:"full"}
+  {path: 'product/:id', component: DetailComponent},
+  {​​​​​​​​path:"product/edit/:id", component:EditComponent}​​​​​​​​,
+  {path: '**', redirectTo:'product', pathMatch:"full"}
 ];
 
 @NgModule({

@@ -9,11 +9,7 @@
         <div class = "col-md-5 text-left bg-white rounded shadow py-3">
       <h1><b>Enter the Product details to Add</b></h1>
       <form (ngSubmit) ='addProduct()' [formGroup] = 'productForm' novalidate class = "form">
-        <!-- <i>Id:</i><input formControlName = 'Id' type = "number" class = "form-control" placeholder="Enter Id"/>
-        <div class = "alert alert-danger" *ngIf = "productForm?.get('Id')?.hasError('required') && productForm?.get('Id')?.touched">
-          Id is required
-      </div>
-        <br/> -->
+        
         <i>Title:</i><input formControlName = 'title' type = "string" class = "form-control" placeholder="Enter Title"/>
         <div class = "alert alert-danger" *ngIf = "productForm?.get('Title')?.hasError('required') && productForm?.get('Title')?.touched">
           Title is required
@@ -21,7 +17,7 @@
         <br/>
         <i>Price:</i><input formControlName = 'price' type = "number" class = "form-control" placeholder="Enter Price"/>
         <div class = "alert alert-danger" *ngIf = "productForm?.get('Price')?.dirty && productForm?.get('Price')?.errors && productForm?.get('Price')?.errors?.priceRange">
-          Price should be greater than 0
+          Price should be in between {{min}} to {{max}} rupees
       </div>
         <br/>
         <i>Quantity:</i><input formControlName = 'quantity' type = "number" class = "form-control" placeholder="Enter Quantity"/>
@@ -39,21 +35,14 @@
           Color is required
       </div>
         <br/>
-        <!-- <i>In Stock:</i><input formControlName = 'isInStock' type = "radio" class = "form-control" placeholder="Enter is In Stock"/>
-        <label for="true">True</label><br>
-        <input formControlName = 'isInStock' type = "radio" class = "form-control" placeholder="Enter is In Stock"/>
-        <label for="false">False</label><br>
-        <div class = "alert alert-danger" *ngIf = "productForm?.get('isInStock')?.hasError('required') && productForm?.get('isInStock')?.touched">
-          isInStock is required
-      </div> -->
-      
+        
       <input class ="form-check-input" formControlName = "inStock" type ="radio" [value] = "true">
       <label class ="form-check-label" for = "inlineRadio2">In Stock</label>
       <br>
       <input class ="form-check-input" formControlName = "inStock" type ="radio" [value] = "false">
       <label class ="form-check-label" for = "inlineRadio2">Out of Stock</label>
         <br/>
-        <button type = "submit" [disabled] = "productForm.invalid" class = "btn btn-danger">Add Product</button>
+        <button type = "submit" class = "btn btn-danger">Add Product</button>
         <button type = "button" (click) = 'cancel()' class = "btn btn-info">Reset</button>
     </form>
       </div>

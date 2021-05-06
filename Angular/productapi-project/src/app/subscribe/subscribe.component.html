@@ -1,4 +1,4 @@
-
+<div class = "col-md-10 text-left bg-white rounded shadow py-3">
 <table>
   <thead>
     <tr>
@@ -14,7 +14,7 @@
   <tbody>
     <tr *ngFor = "let p of prod">
       <td>{{p.id}}</td>
-      <td>{{p.title}}</td>
+      <td><a [routerLink] = "['/product', p.id]">{{p.title}}</a></td>
       <td>{{p.price}}</td>
       <td>{{p.quantity}}</td>
       <td>{{p.color}}</td>
@@ -35,3 +35,4 @@
     </tr>
   </tbody>
 </table>
+</div>
